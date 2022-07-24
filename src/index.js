@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Navbar from './modules/navbar';
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
+import Home from './pages/home';
+import Pokedex from './pages/pokedex';
+import NotFoundPage from "./pages/notfoundpage";
+import About from './pages/About';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/pokedex-example/" element={<Home />} />
+          <Route path="/pokedex-example/pokedex" element={<Pokedex />} />
+          <Route path="/pokedex-example/about" element={<About />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

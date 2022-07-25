@@ -1,7 +1,10 @@
 # Pokedex Example built in React
+
 Made entirely by Facundo Ayosa.
+This is a Work In Progress.
 
 ## Libraries used in the project:
+
 * [facebook/create-react-app](https://github.com/facebook/create-react-app)
 * [remix-run/react-router](https://github.com/remix-run/react-router)
 * [PokeApi/pokedex-promise-v2](https://github.com/PokeAPI/pokedex-promise-v2)

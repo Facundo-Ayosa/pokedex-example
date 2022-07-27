@@ -1,12 +1,19 @@
 import styles from '../styles/home.module.css';
-import Card from '../modules/card';
-import getPokemons from '../modules/pokedex-promise.js';
-
-
+import getPokemons from '../modules/fetch-pokedex';
+import React, { useState } from 'react';
+import loading_svg from '../img/loading.svg';
 // DESIGN: https://www.behance.net/gallery/148252385/Pokdex-Web-Design?tracking_source=search
 
+
 function Home() {
-    //console.log(getPokemons([5,6,7,8,9]).then())
+    let [pokemons, setpokemons] = useState(10);
+    const clickHandler = () => {
+        setpokemons(previousState => {
+            return previousState + 10 
+        })
+        getPokemons(pokemons).then(res => console.log(res));
+    }
+    
     return (
     <main>
         <section id={styles.title}>
@@ -18,7 +25,11 @@ function Home() {
             </div>
         </section>
         <section id={styles.pokedex}>
-            <Card />
+            
+            <img src={loading_svg} alt="loading..." className="loading" />
+        </section>
+        <section id={styles.buttonSection}>
+            <button id={styles.moreButton} onClick={clickHandler}>Load more Pokemon</button>
         </section>
     </main>
     );

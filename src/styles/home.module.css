@@ -38,6 +38,7 @@
 #pokedex {
     width: 95%;
     border: 3px solid var(--dark);
+    background-color: var(--dark);
     border-radius: 15px;
     margin: auto;
     box-sizing: border-box;
@@ -48,14 +49,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.loaded {
-    display: none;
-}
-#pokedex div {
-    display: flex;
-    flex-direction: column;
-    margin: 50px 0 25px 0;
-}
+
 #buttonSection {
     display: flex;
     justify-content: center;

@@ -8,7 +8,6 @@ import {
   Routes
 } from "react-router-dom";
 import Home from './pages/home';
-import Pokedex from './pages/pokedex';
 import NotFoundPage from "./pages/notfoundpage";
 import About from './pages/About';
 import reportWebVitals from './reportWebVitals';
@@ -20,7 +19,6 @@ root.render(
         <Navbar />
         <Routes>
           <Route path="/pokedex-example/" element={<Home />} />
-          <Route path="/pokedex-example/pokedex" element={<Pokedex />} />
           <Route path="/pokedex-example/about" element={<About />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

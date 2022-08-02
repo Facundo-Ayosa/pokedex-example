@@ -1,6 +1,8 @@
 # Pokedex Example built in React
 
-Made entirely by Facundo Ayosa.
+    [Click Here to open a preview](https://facundo-ayosa.github.io/pokedex-example)  
+
+Made entirely by Facundo Ayosa.  
 This is a Work In Progress.
 
 ## Libraries used in the project:

@@ -11,7 +11,8 @@
 #title #searchblock {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    width: 500px;
+    min-width: 500px;
+    max-width: 100vw;
     height: 2rem;
     background-color: var(--dark);
     border-radius: 15px;
@@ -22,6 +23,7 @@
 }
 #title #searchblock #searchbar {
     width: 450px;
+    max-width: 100vw;
     height: 1.5rem;
     background-color: var(--white);
     margin: 0.25rem;

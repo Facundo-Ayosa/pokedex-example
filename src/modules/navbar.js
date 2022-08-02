@@ -13,7 +13,7 @@ function Navbar() {
           <Link to="/pokedex-example/" className={styles.navlink}><img src={pokeball} /></Link>
         </li>
         <li>
-          <Link to="/pokedex-example/pokedex" className={styles.navlink}><img src={person} /></Link>
+          <Link to="/pokedex-example/about" className={styles.navlink}><img src={person} /></Link>
         </li>
       </ul>
     </header>

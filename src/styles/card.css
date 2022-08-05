@@ -44,15 +44,20 @@
 
 .pokecard .cardcontainer .type {
     width: 75px;
-    height: 40px;
-    margin-bottom: 0.5rem;
     text-align: center;
-    border-radius: 7px;
     display: flex;
     flex-direction: column;
     align-content: space-around;
 }
 
+.pokecard .cardcontainer .type p{
+    padding: 1px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.pokecard .cardcontainer .type p:first-child {
+    margin-bottom: 3px;
+}
 
 /* Types Background-color */
 
@@ -80,7 +85,7 @@
     background-color: rgb(152, 216, 216);
 }
 
-.fightin {
+.fighting {
     background-color: rgb(192, 48, 40);
 }
 

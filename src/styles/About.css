@@ -1,0 +1,64 @@
+#profile {
+    width: 50%;
+    border: 3px solid var(--white);
+    background-color: var(--dark);
+    border-radius: 35px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#profile img {
+    margin-top: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--orange);
+    width: 20vw;
+}
+#profile h1 {
+    font-size: 3rem;
+}
+#profile h1 a {
+    text-decoration: none;
+    color: var(--white);
+}
+#profile p {
+    font-size: 1.5rem;
+    color: var(--orange);
+    margin-bottom: 25px;
+}
+#description {
+    width: 75%;
+    border: 3px solid var(--dark);
+    border-radius: 15px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+#description #text {
+    width: 75%;
+}
+#description p {
+    margin: 15px;
+}
+#description #list{
+    width: fit-content;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+#description #list a {
+    padding: 5px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--dark);
+    margin: 5px 0 5px 0;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.5s;
+}
+#description #list a:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}

@@ -8,6 +8,21 @@
     margin-top: 1rem;
     font-size: 3rem;
 }
+
+#title #searchblock {
+    background-color: rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    width: 490px;
+    margin: 5px 0 10px 0;
+    padding: 5px;
+}
+
+#title #searchblock input {
+    color: var(--dark);
+    border: 0;
+    
+}
+/*
 #title #searchblock {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -28,19 +43,26 @@
     background-color: var(--white);
     margin: 0.25rem;
     margin-right: 0;
+    padding: 3px;
+}
+#title #searchblock #searchbar {
+    width: 450px;
+    padding: 0.25rem;
+    margin-left: 0.25rem;
     border-radius: 15px;
+    font-size: 1rem;
+    border: 0;
 }
 #title #searchblock p {
     color: var(--white);
     width: 50px;
     text-align: center;
 }
-
+*/
 /* Pokedex section */
 #pokedex {
     width: 95%;
     border: 3px solid var(--dark);
-    background-color: var(--dark);
     border-radius: 15px;
     margin: auto;
     box-sizing: border-box;
@@ -65,4 +87,10 @@
     border-radius: 25px;
     background-color: var(--dark);
     color: var(--white);
+    transition: all 1s;
+    margin-bottom: 2.5rem;
+}
+#moreButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.1);
 }

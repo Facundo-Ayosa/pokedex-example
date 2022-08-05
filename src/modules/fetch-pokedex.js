@@ -6,17 +6,18 @@ import '../styles/card.css';
 const P = new Pokedex();
 
 // Get (number) amount of pokemons and format them to an array of objects.
-async function getPokemons(number){
+async function getPokedex(number){
     var array = []
     for (let i = pokemonList.length; i <= number; i++){
         if( i===0 ) i++;
         array.push(`/api/v2/pokemon/` + i)
     }
-    const pokemonData = await P.getResource(array);
+    const pokemonData = await P.getResource(array)
+        .catch((error) => {
+            console.log('No Pokemon with that ID', error);
+        });
     return ManageCards(pokemonData);
 }
-//async not working?
-
 function ManageCards(data){
     let importantData = data.map((e) => {
         let isshiny = (Math.random()*8192)+1 === 1 ? true : false;
@@ -28,7 +29,6 @@ function ManageCards(data){
             id: e.id,
             name: e.name,
             sprite: shinyurl,
-            shiny: isshiny,
             types: e.types.map((e) => { return e.type.name}),
         }
     });
@@ -41,7 +41,7 @@ function ManageCards(data){
         <div class="cardcontainer">
             <div class="name">
                 <p class="id">${e.id}</p>
-                <h4 class="pokename">${e.name}</h4>
+                <h4 class="pokename">${e.name.charAt(0).toUpperCase() + e.name.substring(1)}</h4>
             </div>
             <div class="type">
                 ${domtypes.join("")}
@@ -52,4 +52,4 @@ function ManageCards(data){
     return cards;
 }
 
-export default getPokemons;
+export default getPokedex;

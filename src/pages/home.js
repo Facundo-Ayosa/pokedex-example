@@ -1,6 +1,5 @@
 import styles from '../styles/home.module.css';
 import getPokedex from '../modules/fetch-pokedex';
-import getPokemon from '../modules/fetch-pokemon';
 import React, { useState, useEffect } from 'react';
 import loading_svg from '../img/loading.svg';
 import '../styles/card.css';
@@ -12,22 +11,18 @@ function Home() {
     const [pokemonList, setPokemonList] = useState([]);
     const clickHandler = () => {
         setPokemonAmount(previousState => {
-            return previousState + 12 
+            return previousState + 12;
         })
-        getPokedex(pokemonAmount).then(res => setPokemonList(res));
-        refreshPokedex();
+        getPokedex(pokemonAmount).then(res => setPokemonList(res))
     }
     useEffect(() => {
-        refreshPokedex();
-    });
-    function refreshPokedex(){
-        if(pokemonList.length === 0){
+        if(pokemonList.length !== pokemonAmount){
             getPokedex(pokemonAmount).then(res => setPokemonList(res))
-        } else {
+        }else {
             if (document.getElementById('loading')) document.getElementById('loading').remove();
-            document.getElementById(styles.pokedex).innerHTML = pokemonList.join("");
         }
-    }
+        document.getElementById(styles.pokedex).innerHTML = pokemonList.join("");
+    });
     return (
     <main>
         <section id={styles.title}>

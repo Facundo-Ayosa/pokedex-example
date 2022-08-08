@@ -1,9 +1,9 @@
 # Pokedex Example built in React
 
-    [Click Here to open a preview](https://facundo-ayosa.github.io/pokedex-example)  
+[Click Here to open a preview](https://facundo-ayosa.github.io/pokedex-example)  
 
 Made entirely by Facundo Ayosa.  
-This is a Work In Progress.
+Version 1.0!
 
 ## Libraries used in the project:
 
@@ -36,3 +36,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+###  `npm run deploy`
+
+Deploys the app to Github Pages.

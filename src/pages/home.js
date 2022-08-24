@@ -22,7 +22,7 @@ function Home() {
             if (document.getElementById('loading')) document.getElementById('loading').remove();
         }
         document.getElementById(styles.pokedex).innerHTML = pokemonList.join("");
-    });
+    }, [pokemonList]);
     return (
     <main>
         <section id={styles.title}>

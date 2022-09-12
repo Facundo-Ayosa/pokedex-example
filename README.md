@@ -1,6 +1,6 @@
 # Pokedex Example built in React
 
-[Click Here to open a preview](https://facundo-ayosa.github.io/pokedex-example)  
+[Click Here to open a preview](https://ayosafacundo.github.io/pokedex-example)  
 
 Made entirely by Facundo Ayosa.  
 Version 1.0!

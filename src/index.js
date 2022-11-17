@@ -11,17 +11,19 @@ import Home from './pages/home';
 import NotFoundPage from "./pages/notfoundpage";
 import About from './pages/About';
 import reportWebVitals from './reportWebVitals';
+import Test from './pages/Test';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/pokedex-example/" element={<Home />} />
-          <Route path="/pokedex-example/about" element={<About />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+      <Navbar />
+      <Routes>
+        <Route path="/pokedex-example/" element={<Home />} />
+        <Route path="/pokedex-example/about" element={<About />} />
+        <Route path="/pokedex-example/test" element={<Test />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

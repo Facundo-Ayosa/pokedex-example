@@ -40,3 +40,10 @@ Your app is ready to be deployed!
 ###  `npm run deploy`
 
 Deploys the app to Github Pages.
+
+
+Todo:
+[] - Random Item/Candy encounter.
+[] - Backend (Express.js & Node.js)
+[] - Database (MongoDB)
+[] - User registration + pokemon storing.

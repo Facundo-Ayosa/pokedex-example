@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/cardtest.css'
 
 export default function Test() {
     /*return (

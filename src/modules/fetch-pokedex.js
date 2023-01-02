@@ -1,5 +1,4 @@
 import pokemonList from '../pages/home';
-import '../styles/card.css';
 
 const P = new Pokedex();
 

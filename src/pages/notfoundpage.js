@@ -1,4 +1,8 @@
 function NotFoundPage() {
-    return (<h2 style={{ color: "red" }}>Error 404: Page not found.</h2>);
+
+
+
+
+    return (<h2>Error 404: Page not found.</h2>);
 }
 export default NotFoundPage

@@ -1,0 +1,91 @@
+/* Utilities */
+:root {
+  --bg: #f2f2f4;
+  --font: #162225;
+  --accent: #d7343b;
+}
+
+/* Base */
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+} /* Layouts*/
+header {
+  background-color: var(--accent);
+}
+header ul {
+  background-color: var(--font);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  display: inline;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.7572815534rem + 1.0355987055vw, 2rem);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition-duration: 0.5s;
+}
+header ul li a {
+  text-decoration: none;
+  color: var(--bg);
+}
+header ul li:hover,
+header ul li .dropdown-content a:hover {
+  background-color: var(--bg);
+  color: var(--font);
+  transition: all 0.5s;
+}
+header ul li:hover > *,
+header ul li:hover div.dropdown > *,
+header ul li .dropdown-content a:hover > *,
+header ul li .dropdown-content a:hover div.dropdown > * {
+  color: inherit;
+  transition: all 0.5s;
+}
+header a > img {
+  position: relative;
+  top: 0;
+  left: 15px;
+  height: 7.5rem;
+  width: 15rem;
+  image-rendering: optimizeSpeed;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+/* Modules or Components */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--font);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px;
+  z-index: 1;
+  left: -0.5rem;
+}
+.dropdown .dropdown-content a {
+  box-sizing: border-box;
+  padding: 5px;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:hover a {
+  display: block;
+}
+
+/* Pages *//*# sourceMappingURL=Main.css.map */

@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 function Card({ id, name, sprites, types }) {
-
     let isShiny = Math.floor(Math.random() * 8192) === 1 ? true : false;
     let sprite = isShiny ? sprites.front_shiny : sprites.front_default;
 

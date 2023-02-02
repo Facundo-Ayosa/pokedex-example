@@ -1,8 +1,8 @@
 header {
-    background-color: var(--accent);
+    background-color: $accent;
 
     ul {
-        background-color: var(--font);
+        background-color: $font-color;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -18,13 +18,13 @@ header {
 
             a {
                 text-decoration: none;
-                color: var(--bg);
+                color: $background;
             }
 
             &:hover,
             .dropdown-content a:hover {
-                background-color: var(--bg);
-                color: var(--font);
+                background-color: $background;
+                color: $font-color;
                 transition: all 0.5s;
 
                 &>*,

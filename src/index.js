@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './sass/Main.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NotFoundPage from "./pages/notfoundpage";
-import About from './pages/About';
-import Home from './pages/Home';
-import Test from './pages/Test';
+/* import NotFoundPage from "./pages/notfoundpage";
+import About from './pages/About'; */
+import CardView from './pages/CardView';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,10 +13,8 @@ root.render(
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/pokemon/" element={<Home />} />
-        <Route path="/pokemon/about" element={<About />} />
-        <Route path="/pokemon/test" element={<Test />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/pokemon/" element={<CardView />} />
+        <Route path="*" element={<CardView />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

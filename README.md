@@ -3,17 +3,12 @@
 [Click Here to open a preview](https://ayosafacundo.github.io/pokemon)  
 
 Made entirely by Facundo Ayosa.  
-Version 1.5!
+Version **2.0**!
 
 ## Libraries used in the project:
 
 * [facebook/create-react-app](https://github.com/facebook/create-react-app)
-* [remix-run/react-router](https://github.com/remix-run/react-router)
-* [Poke Api V2](https://pokeapi.co/) Api
+* [Poke Api V2](https://pokeapi.co/) Api  
 
-Todo:
-[] - Redesign (IN PROGRESS)  
-[] - Random Item/Candy encounter.  
-[] - Backend (Express.js & Node.js)  
-[] - Database (MongoDB)  
-[] - User registration + pokemon storing.  
+Card Design:  
+    https://www.behance.net/gallery/146710797/Pokedex-Ui-Study?tracking_source=search_projects%7CPok%C3%A9dex

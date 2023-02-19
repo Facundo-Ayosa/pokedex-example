@@ -1,62 +1,124 @@
 /* Utilities */ /* normal Style */
 /* Base */
 html,
-body {
+body,
+#root {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
-} /* Layouts*/
-header {
-  background-color: #d7343b;
-}
-header ul {
-  background-color: #162225;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-header ul li {
-  display: inline;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.7572815534rem + 1.0355987055vw, 2rem);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  transition-duration: 0.5s;
-}
-header ul li a {
-  text-decoration: none;
-  color: #f2f2f4;
-}
-header ul li:hover,
-header ul li .dropdown-content a:hover {
-  background-color: #f2f2f4;
-  color: #162225;
-  transition: all 0.5s;
-}
-header ul li:hover > *,
-header ul li:hover div.dropdown > *,
-header ul li .dropdown-content a:hover > *,
-header ul li .dropdown-content a:hover div.dropdown > * {
-  color: inherit;
-  transition: all 0.5s;
-}
-header a > img {
-  position: relative;
-  top: 0;
-  left: 15px;
-  height: 7.5rem;
-  width: 15rem;
-  image-rendering: optimizeSpeed;
-  -o-object-fit: cover;
-     object-fit: cover;
-  padding: 0;
-  margin: 0;
 }
 
+/* Layouts*/
+@media (orientation: landscape) {
+  header {
+    background-color: #d7343b;
+    border-bottom: 0.5rem solid #162225;
+  }
+  header:has(ul) {
+    border-bottom: 0;
+  }
+  header ul {
+    background-color: #162225;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  header ul li {
+    display: inline;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.7572815534rem + 1.0355987055vw, 2rem);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition-duration: 0.5s;
+  }
+  header ul li a {
+    text-decoration: none;
+    color: #f2f2f4;
+  }
+  header ul li:hover,
+  header ul li .dropdown-content a:hover {
+    background-color: #f2f2f4;
+    color: #162225;
+    transition: all 0.5s;
+  }
+  header ul li:hover > *,
+  header ul li:hover div.dropdown > *,
+  header ul li .dropdown-content a:hover > *,
+  header ul li .dropdown-content a:hover div.dropdown > * {
+    color: inherit;
+    transition: all 0.5s;
+  }
+  header a > img {
+    position: relative;
+    aspect-ratio: 2/1;
+    top: 0;
+    left: 15px;
+    height: 7.5rem;
+    width: 15rem;
+    image-rendering: optimizeSpeed;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (orientation: portrait) {
+  header {
+    background-color: #d7343b;
+    border-bottom: 2px solid #162225;
+  }
+  header ul {
+    background-color: #162225;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  header ul li {
+    display: inline;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.7572815534rem + 1.0355987055vw, 2rem);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition-duration: 0.5s;
+  }
+  header ul li a {
+    text-decoration: none;
+    color: #f2f2f4;
+  }
+  header ul li:hover,
+  header ul li .dropdown-content a:hover {
+    background-color: #f2f2f4;
+    color: #162225;
+    transition: all 0.5s;
+  }
+  header ul li:hover > *,
+  header ul li:hover div.dropdown > *,
+  header ul li .dropdown-content a:hover > *,
+  header ul li .dropdown-content a:hover div.dropdown > * {
+    color: inherit;
+    transition: all 0.5s;
+  }
+  header > a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  header > a > img {
+    aspect-ratio: 2/1;
+    height: 7.5rem;
+    width: 15rem;
+    image-rendering: crisp-edges;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding: 0;
+    margin: 0;
+  }
+}
 /* Modules or Components */
 .dropdown {
   position: relative;
@@ -94,20 +156,21 @@ div#card {
   flex-direction: column;
   margin: 5px;
   font-family: "VT323", monospace;
-  /* Buttons */
 }
 div#card .pokemon {
   position: relative;
-  height: 14.375em;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  width: 14.375em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Buttons */
 }
 div#card .pokemon > img {
-  -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: pixelated;
+  image-rendering: pixelated;
+  width: 100%;
   aspect-ratio: 1/1;
-  width: 14.375em;
 }
 div#card .pokemon .pokedata {
   max-height: 1em;
@@ -130,26 +193,26 @@ div#card .pokemon .pokedata > span {
 div#card .pokemon .pokedata > span:last-of-type {
   letter-spacing: 1px;
 }
-div#card .options {
-  min-width: 14.375em;
-  max-width: 14.5em;
+div#card .pokemon .options {
+  width: 100%;
   height: 2em;
-  margin: 0 auto 0.5em auto;
+  display: flex;
+  justify-content: space-around;
 }
-div#card .options button {
-  width: 33%;
+div#card .pokemon .options button {
+  flex-grow: 1;
   height: 2em;
   border: 0;
   margin: 0;
   padding: 0 5px 0 5px;
 }
-div#card .options button:nth-child(1) {
+div#card .pokemon .options button:nth-child(1) {
   border-bottom-left-radius: 2em;
 }
-div#card .options button:nth-child(3) {
+div#card .pokemon .options button:nth-child(3) {
   border-bottom-right-radius: 2em;
 }
-div#card .options button:hover {
+div#card .pokemon .options button:hover {
   filter: brightness(75%);
 }
 div#card #CardSections {
@@ -279,7 +342,6 @@ div#card #CardSections .moves .move-4 {
   cursor: default;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   text-align: center;
   box-sizing: border-box;
@@ -394,4 +456,15 @@ div#card #CardSections .moves .move-4 {
   justify-content: center;
   justify-items: center;
   align-items: center;
+}
+
+#about {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+}
+#about div {
+  outline: 1px solid red;
+  width: 10px;
+  height: 10px;
 }/*# sourceMappingURL=Main.css.map */

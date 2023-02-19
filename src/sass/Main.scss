@@ -5,7 +5,13 @@
 @import 'base/reset';
 
 /* Layouts*/
-@import 'layout/header';
+@media (orientation: landscape) {
+    @import 'layout/header_landscape';
+}
+
+@media (orientation: portrait) {
+    @import 'layout/header_portrait';
+}
 
 /* Modules or Components */
 @import 'modules/dropdown';
@@ -13,3 +19,4 @@
 
 /* Pages */
 @import 'pages/cardView';
+@import 'pages/about';

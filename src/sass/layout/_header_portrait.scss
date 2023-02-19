@@ -1,5 +1,6 @@
 header {
     background-color: $accent;
+    border-bottom: 2px solid $font-color;
 
     ul {
         background-color: $font-color;
@@ -36,16 +37,19 @@ header {
         }
     }
 
-    a>img {
-        position: relative;
-        aspect-ratio: 2/1;
-        top: 0;
-        left: 15px;
-        height: 7.5rem;
-        width: 15rem;
-        image-rendering: optimizeSpeed;
-        object-fit: cover;
-        padding: 0;
-        margin: 0;
+    >a {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        >img {
+            aspect-ratio: 2/1;
+            height: 7.5rem;
+            width: 15rem;
+            image-rendering: crisp-edges;
+            object-fit: cover;
+            padding: 0;
+            margin: 0;
+        }
     }
 }

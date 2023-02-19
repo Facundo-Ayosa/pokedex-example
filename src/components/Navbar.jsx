@@ -1,15 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ links }) {
+
+    const Navbar = () => {
+        if (links.length > 1) {
+            return (
+                <ul>
+                    {links.map((e, i) => {
+                        return <li key={i}><Link to={e.path}>{e.name}</Link></li>
+                    })}
+                </ul>
+            )
+        }
+    }
+
     return (
         <header>
             <Link to="/pokemon"><img src="https://www.svgrepo.com/show/306584/pokemon.svg" alt="Pokémon" /></Link>
-            <ul>
-                <li>
-                    <Link to="/pokemon/">Pokédex</Link>
-                </li>
-            </ul>
+            {Navbar()}
         </header>
     )
 }

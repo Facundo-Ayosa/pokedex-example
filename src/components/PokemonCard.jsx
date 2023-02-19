@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as poketypes from '../svg/index'
 
 function PokemonCard({ data }) {
     const [SelectedButton, setSelectedButton] = useState("About")
+    const chosedMoves = useRef([]);
     /* Shiny chance (1 in 8192) */
     let isShiny = Math.floor(Math.random() * 8192) === 1 ? true : false;
     let sprite = isShiny ? data.sprites.front_shiny : data.sprites.front_default;
@@ -18,45 +19,46 @@ function PokemonCard({ data }) {
         acc.push(obj.move.name.replace("-", " "));
         return acc
     }, [])
+    /* Random ability chooser for each card */
+    useEffect(() => {
+        let jsxarr = []
+        for (let i = 1; i <= 4; i++) {
+            jsxarr.push(<div key={i} className={`move-${i}`}>{moves[Math.floor(Math.random() * moves.length)]}</div>);
+        }
+        chosedMoves.current = jsxarr
+    }, [])
+
 
     /* [About - Stats - Moves] button handler */
     const handleButtonClick = (buttonid) => {
         setSelectedButton(buttonid);
     };
 
-    /* Random ability chooser for each card */
-    const moveChooser = () => {
-        let jsxarr = []
-        for (let i = 1; i <= 4; i++) {
-            jsxarr.push(<div key={i} className={`move-${i}`}>{moves[Math.floor(Math.random() * moves.length)]}</div>);
-        }
-        return jsxarr
-    }
     return <div id="card">
-        <div className={`${data.types[0].type.name} pokemon`}>
-            <img src={sprite} alt={`${data.name} Sprite`} />
+        <div className={`pokemon`}>
             <div className="pokedata">
                 <img src="https://www.svgrepo.com/show/381093/ball-game-poke-sport-sports.svg" alt="Pokeball icon" />
                 <span>{data.name}</span>
                 <span>{`#${('000' + data.id).slice(-3)}`}</span>
             </div>
-        </div>
-        <div className="options">
-            <button
-                className={SelectedButton === "About" ? `${types[0]}` : undefined}
-                onClick={() => { handleButtonClick("About") }}>
-                About
-            </button>
-            <button
-                className={SelectedButton === "Stats" ? `${types[0]}` : undefined}
-                onClick={() => { handleButtonClick("Stats") }}>
-                Stats
-            </button>
-            <button
-                className={SelectedButton === "Moves" ? `${types[0]}` : undefined}
-                onClick={() => { handleButtonClick("Moves") }}>
-                Abilities
-            </button>
+            <img className={data.types[0].type.name} src={sprite} alt={`${data.name} Sprite`} />
+            <div className="options">
+                <button
+                    className={SelectedButton === "About" ? `${types[0]}` : undefined}
+                    onClick={() => { handleButtonClick("About") }}>
+                    About
+                </button>
+                <button
+                    className={SelectedButton === "Stats" ? `${types[0]}` : undefined}
+                    onClick={() => { handleButtonClick("Stats") }}>
+                    Stats
+                </button>
+                <button
+                    className={SelectedButton === "Moves" ? `${types[0]}` : undefined}
+                    onClick={() => { handleButtonClick("Moves") }}>
+                    Abilities
+                </button>
+            </div>
         </div>
         <div id='CardSections'>
             <div className={SelectedButton === "About" ? "about" : "hidden"}>
@@ -105,7 +107,7 @@ function PokemonCard({ data }) {
                 </div>
             </div>
             <div className={SelectedButton === "Moves" ? "moves" : "hidden"}>
-                {moveChooser()}
+                {chosedMoves.current}
             </div>
         </div>
     </div>
